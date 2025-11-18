@@ -22,7 +22,7 @@
 \DeclareFieldFormat{volume}{#1}
 %
 \newbibmacro*{quickdate}{%
-  \iffieldundef{year}{\printtext[parens]{s.\,f.}}{\printtext[parens]{\printdate}}}
+  \iffieldundef{year}{\printtext[parens]{S.\,F.}}{\printtext[parens]{\printdate}}}
 %
 \newbibmacro*{printvolumetome}{%
   \iffieldundef{volume}{}{%
@@ -108,11 +108,11 @@
   \newunit
   \printlist{publisher}%
   \newunit
-  \printfield{url}%
+  \iffieldundef{url}{}{\printtext{<}\printfield{url}\printtext{>}}
   \ifbibstring{nodate}{\setunit{\adddot\addspace}}{}%
   \iffieldundef{sigla}{}{%
     \addperiod\addspace
-    \printtext{<}\printfield{sigla}\printtext{>}%
+    \printtext{(=\addspace}\printfield{sigla}\printtext{)}%
   }
   \usebibmacro{finentry}%
 }
@@ -137,10 +137,12 @@
   \setunit{\addcomma\space}\printfield{pages}%
   \newunit
   \printlist{publisher}%
+  \newunit
+  \iffieldundef{url}{}{\printtext{<}\printfield{url}\printtext{>}}
   \ifbibstring{nodate}{\setunit{\adddot\addspace}}{}%
   \iffieldundef{sigla}{}{%
     \addperiod\addspace
-    \printtext{<}\printfield{sigla}\printtext{>}%
+    \printtext{(=\addspace}\printfield{sigla}\printtext{)}%
   }
   \usebibmacro{finentry}%
 }
@@ -153,11 +155,11 @@
   \printfield{title}%
   \usebibmacro{printroles}% 
   \newunit
-  \printfield{url}%
+  \iffieldundef{url}{}{\printtext{<}\printfield{url}\printtext{>}}
   \ifbibstring{nodate}{\setunit{\adddot\addspace}}{}%
   \iffieldundef{sigla}{}{%
     \addperiod\addspace
-    \printtext{<}\printfield{sigla}\printtext{>}%
+    \printtext{(=\addspace}\printfield{sigla}\printtext{)}%
   }
   \usebibmacro{finentry}%
 }
@@ -179,10 +181,12 @@
   }%
   \newunit
   \printlist{publisher}%
+  \newunit
+  \iffieldundef{url}{}{\printtext{<}\printfield{url}\printtext{>}}
   \ifbibstring{nodate}{\setunit{\adddot\addspace}}{}%
   \iffieldundef{sigla}{}{%
     \addperiod\addspace
-    \printtext{<}\printfield{sigla}\printtext{>}%
+    \printtext{(=\addspace}\printfield{sigla}\printtext{)}%
   }
   \usebibmacro{finentry}%
 }
