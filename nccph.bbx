@@ -108,8 +108,10 @@
   \newunit
   \printlist{publisher}%
   \newunit
-  \iffieldundef{url}{}{\printtext{<}\printfield{url}\printtext{>}}
-  \ifbibstring{nodate}{\setunit{\adddot\addspace}}{}%
+  \iffieldundef{url}{}{%
+    \printtext{<}\printfield{url}\printtext{>}%
+    \newunit
+  }
   \iffieldundef{sigla}{}{%
     \addperiod\addspace
     \printtext{(=\addspace}\printfield{sigla}\printtext{)}%
@@ -138,8 +140,10 @@
   \newunit
   \printlist{publisher}%
   \newunit
-  \iffieldundef{url}{}{\printtext{<}\printfield{url}\printtext{>}}
-  \ifbibstring{nodate}{\setunit{\adddot\addspace}}{}%
+  \iffieldundef{url}{}{%
+    \printtext{<}\printfield{url}\printtext{>}%
+    \newunit
+  }
   \iffieldundef{sigla}{}{%
     \addperiod\addspace
     \printtext{(=\addspace}\printfield{sigla}\printtext{)}%
@@ -155,8 +159,10 @@
   \printfield{title}%
   \usebibmacro{printroles}% 
   \newunit
-  \iffieldundef{url}{}{\printtext{<}\printfield{url}\printtext{>}}
-  \ifbibstring{nodate}{\setunit{\adddot\addspace}}{}%
+  \iffieldundef{url}{}{%
+    \printtext{<}\printfield{url}\printtext{>}%
+    \newunit
+  }
   \iffieldundef{sigla}{}{%
     \addperiod\addspace
     \printtext{(=\addspace}\printfield{sigla}\printtext{)}%
@@ -182,8 +188,10 @@
   \newunit
   \printlist{publisher}%
   \newunit
-  \iffieldundef{url}{}{\printtext{<}\printfield{url}\printtext{>}}
-  \ifbibstring{nodate}{\setunit{\adddot\addspace}}{}%
+  \iffieldundef{url}{}{%
+    \printtext{<}\printfield{url}\printtext{>}%
+    \newunit
+  }
   \iffieldundef{sigla}{}{%
     \addperiod\addspace
     \printtext{(=\addspace}\printfield{sigla}\printtext{)}%
